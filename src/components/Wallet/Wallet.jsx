@@ -1,12 +1,7 @@
 import React from "react";
-import { Flex } from "../../uikit/Flex/Flex";
-import Transfer from "./components/Transfer";
-// import styles from "./styles";
-import { Switch, Route, NavLink, Redirect } from "react-router-dom";
-import NativeBalance from "../NativeBalance";
+import Transfer from "./Transfer";
 import Address from "../Address/Address";
-import Assets from "./components/Assets";
-import Blockie from "../Blockie";
+
 
 const styles = {
   title: {
@@ -50,38 +45,28 @@ const styles = {
   },
 };
 
+
+
 function Wallet() {
   return (
-    <Flex maxWidth="1200px">
-      <h1 style={styles.title}>💵Your Wallet</h1>
+    <div maxWidth="1200px">
+
       <div style={styles.card}>
         <div style={styles.header}>
-          <Blockie size={10} avatar currentWallet />
-          <Address size="6" copyable />
-          <NativeBalance />
+                    <Address size="6" copyable />
+
+
         </div>
         <div style={styles.navLinks}>
-          <NavLink to="/wallet/transfer" style={styles.navLink} activeStyle={styles.activeLink}>
-            Transfer
-          </NavLink>
+          <Transfer />
+
           {/* <NavLink to="/wallet/transactions" style={styles.navLink} activeStyle={styles.activeLink}>
             Transactions
           </NavLink> */}
-          <NavLink to="/wallet/assets" style={styles.navLink} activeStyle={styles.activeLink}>
-            Assets
-          </NavLink>
+
         </div>
-        <Switch>
-          <Route path="/wallet/transfer">
-            <Transfer />
-          </Route>
-          <Route path="/wallet/assets">
-            <Assets />
-          </Route>
-          <Redirect to="/wallet/transfer" />
-        </Switch>
       </div>
-    </Flex>
+    </div>
   );
 }
 

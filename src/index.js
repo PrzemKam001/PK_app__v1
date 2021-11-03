@@ -8,10 +8,10 @@ import { MoralisDappProvider } from "./providers/MoralisDappProvider/MoralisDapp
 const APP_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID;
 const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
 
-/** Get your free Moralis Account https://moralis.io/ */
+
 ReactDOM.render(
   <React.StrictMode>
-    <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
+    <MoralisProvider appId={"0IW369tYfkX5QU81PHwOrI76NJIIoVfpG1q8Oe3M"} serverUrl={"https://46lrdbnqnpyu.usemoralis.com:2053/server"}>
       <MoralisDappProvider>
         <App />
       </MoralisDappProvider>

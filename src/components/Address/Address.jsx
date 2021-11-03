@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
 import { getEllipsisTxt } from "../../utils/formatters";
-import Blockie from "../Blockie";
-import "./identicon.css";
+
+
 
 const styles = {
   address: {
@@ -55,7 +55,7 @@ function Address(props) {
 
   return (
     <div style={styles.address}>
-      {props.avatar && <Blockie address={address} size={7} />}
+      {props.avatar}
       <p>{props.size ? getEllipsisTxt(address, props.size) : address}</p>
       {props.copyable && (isClicked ? <Check /> : <Copy />)}
     </div>

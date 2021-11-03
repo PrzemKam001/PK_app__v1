@@ -1,0 +1,16 @@
+.section__line {
+    box-sizing: border-box;
+    padding: 0 15px;
+    margin-left: 15px;
+    min-width: 480px;
+    max-width: 999px;
+    height: 2px;
+    background-image: linear-gradient(to bottom right, #8b72be, #8b72be);
+}
+
+.small__text__basic {
+    color: #8b72be;
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+}

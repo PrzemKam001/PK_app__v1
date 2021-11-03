@@ -1,7 +1,7 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
 import Address from "./Address/Address";
-import NativeBalance from "./NativeBalance";
+
 
 const styles = {
   account: {
@@ -41,7 +41,7 @@ function Account() {
 
   return (
     <div style={{ ...styles.account, ...styles.wrapper }} onClick={() => logout()}>
-      <NativeBalance />
+
       <Address avatar size="5" />
     </div>
   );

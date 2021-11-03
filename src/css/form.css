@@ -1,0 +1,41 @@
+.container__form {
+    box-sizing: border-box;
+    padding: 5px 15px;
+    margin-left: 15px;
+    min-width: 480px;
+    max-width: 999px;
+    color: #ffffff;
+    background-image: linear-gradient(to bottom right, #000000, #614051);
+    font-family: 'PT Sans Narrow', sans-serif;
+
+}
+
+.form__container_basic {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form__left__parent {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 400px;
+    border: 2px solid #ff0789;
+    border-radius: 10px;
+}
+
+.form__title {
+    font-size: 34px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.form__basic__text {
+    padding: 20px;
+    color: #ff0789;
+}
+
+

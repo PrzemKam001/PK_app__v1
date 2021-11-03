@@ -1,0 +1,34 @@
+.container__header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    margin-left: 15px;
+    min-width: 480px;
+    max-width: 999px;
+    color: #ffffff;
+    background-image: linear-gradient(to bottom right, #000000, #614051);
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.logo__top {
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.btn__connect {
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: #fcd9d6;
+    border-radius: 20px;
+    border-color: #ff0789;
+    margin: 20px 0;
+    color: #ff0789;
+}
+
+.header__balance {
+    color: #ff0789;
+    background-color: #010101;
+
+}
+

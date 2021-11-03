@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from "react";
 import useChain from "hooks/useChain";
-import { Avalanche, Polygon, Binance, Ethereum } from "./components";
+import { Binance } from "./components";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 
 /** TO DO
@@ -34,17 +35,8 @@ function Chains(props) {
 
   return (
     <div className="chains" style={styles.chains}>
-      {props?.avalanche && (
-        <Avalanche onClick={() => switchNetwork("0xa86a")} activeChain={chainId === "0xa86a"} />
-      )}
-      {props?.polygon && (
-        <Polygon onClick={() => switchNetwork("0x89")} activeChain={chainId === "0x89"} />
-      )}
       {props?.bsc && (
         <Binance onClick={() => switchNetwork("0x38")} activeChain={chainId === "0x38"} />
-      )}
-      {props?.eth && (
-        <Ethereum onClick={() => switchNetwork("0x1")} activeChain={chainId === "0x1"} />
       )}
     </div>
   );
