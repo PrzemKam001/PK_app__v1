@@ -8,6 +8,9 @@ const Lottery_Setup = () => {
     const [winners, setWinner] = useState([]);
     const [winbox, setWinbox] = useState("none");
     const [lotterybox, setLotterybox] = useState ("block");
+    const [answeraddress, setAnsweraddress] = useState("");
+
+    const [loader, setLoader] = useState(false);
 
         useEffect(() => {
             db.collection("winner")
@@ -91,6 +94,27 @@ const Lottery_Setup = () => {
         console.log(closefunc, "nasz div");
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoader(true);
+
+        db.collection("lottry_winner")
+            .add({
+                answeraddress: answeraddress,
+            })
+            .then(() => {
+                setLoader(false);
+                alert("Your message has been submitted👍");
+            })
+            .catch((error) => {
+                alert(error.message);
+                setLoader(false);
+            });
+
+        setAnsweraddress("");
+
+    };
+
 
     console.log(yourcodenumber, typeof(yourcodenumber), winvariable , typeof(winvariable), newyourcode, typeof(newyourcode));
 
@@ -99,8 +123,13 @@ const Lottery_Setup = () => {
             <>
                 <div className="lottery__win__box" style={{display: winbox}}>
                     <h1>CONGRATULATION ! YOU WIN !</h1>
-                <form><label>WKLEJ SWÓJ ADDRESS PORTFELA</label><input />
-                <button>SUBMIT</button>
+                <form onSubmit={handleSubmit}><label>WKLEJ SWÓJ ADDRESS PORTFELA</label><input />
+                    <button
+                        type="submit"
+                        style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
+                    >
+                        Submit
+                    </button>
                 </form>
                     <button onClick={handleClose}>Close</button>
                 </div>

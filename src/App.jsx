@@ -4,6 +4,7 @@ import Header from "./Header";
 import Data_Token from "./DataToken";
 import Form from "./Form";
 import LotterySection from "./Lottery_section";
+import "./css/basics.css"
 
 
 const App = () => {
@@ -15,22 +16,22 @@ const App = () => {
   }, [isAuthenticated, isWeb3Enabled]);
 
   return ( // Header = WalletSetup + Account + Address + Chains + Data_Token
-    <div>
-
-        <Header></Header>
-        <Data_Token />
-        <div className="container__lottery">
-            <div className="lottery__parent">
-                <LotterySection />
-
-            </div>
+    <>
+        <div className="app__background">
+                <Header></Header>
+                <Data_Token />
+                    <div className="container__lottery">
+                        <div className="lottery__parent">
+                            <LotterySection />
+                        </div>
+                    </div>
+                    <div className="section__line"></div>
+                <Form/>
+                    <div>
+                    <p>this is last version</p>
+                    </div>
         </div>
-        <div className="section__line"></div>
-        <Form/>
-      <div>
-        <p>this is last version</p>
-      </div>
-    </div>
+    </>
   );
 };
 

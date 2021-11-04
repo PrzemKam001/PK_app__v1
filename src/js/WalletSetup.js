@@ -76,7 +76,7 @@ const WalletSetup = () => {
                 <div className="logo__top"><img src={logo} /></div>
                 <div>
                 <Account />
-                <Chains bsc /><p>set up BSC Network on MetaMask</p>
+                <p className="small__text__basic">set up BSC Network on MetaMask</p>
                 </div>
                 <div className='walletCard'>
                                        {errorMessage}

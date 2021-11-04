@@ -1,6 +1,7 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
 import Address from "./Address/Address";
+import Chains from "./Chains/Chains"
 
 
 const styles = {
@@ -64,7 +65,7 @@ function Account() {
   return (
     <div style={{ ...styles.account, ...styles.wrapper }} onClick={() => logout()}>
 
-      <Address avatar size="5" />
+      <Address avatar size="5" /><Chains bsc />
     </div>
   );
 }
