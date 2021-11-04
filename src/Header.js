@@ -4,9 +4,11 @@ import "./css/header.css"
 import "./css/basics.css"
 
 
+
 const Header = () => {
     return (
         <>
+
             <WalletSetup />
             </>
     );

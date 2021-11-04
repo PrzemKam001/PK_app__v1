@@ -1,0 +1,28 @@
+.final_lottery_box {
+    position:fixed;
+    width: 50%;
+    height: 300px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: #8b72be;
+}
+
+
+.btn__lottery__start {
+    background-color: #ff0789;
+    color: black;
+    font-size: 33px;
+    font-weight: 700;
+    margin: 20px;
+    text-align: center;
+
+}
+
+
+.lottery__basic__text {
+    color: #222222;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}

@@ -46,10 +46,33 @@ const styles = {
 };
 
 
+class CloseAction extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showComponent: true,
+    };
+    this._onButtonClick = this._onButtonClick.bind(this);
+  }
+
+  _onButtonClick() {
+    this.setState({
+      showComponent: false,
+
+    });
+
+
+  }
+}
+
+
 
 function Wallet() {
+
+
   return (
-    <div maxWidth="1200px">
+    <div maxWidth="1200px" className="buyticket__box">
 
       <div style={styles.card}>
         <div style={styles.header}>
@@ -57,7 +80,9 @@ function Wallet() {
 
 
         </div>
+        <button>close</button>
         <div style={styles.navLinks}>
+
           <Transfer />
 
           {/* <NavLink to="/wallet/transactions" style={styles.navLink} activeStyle={styles.activeLink}>

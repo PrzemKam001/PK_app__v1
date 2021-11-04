@@ -17,13 +17,63 @@ const styles = {
   },
 };
 
+const Web3 = require("web3");
+const providerIsNew = "https://floral-billowing-glade.bsc.quiknode.pro/29ea12cb502ef5492fc8c5800415e29b801c933b/"
+// const providerIsNew = "http://localhost:7545"
+const Web3Client = new Web3(new Web3.providers.HttpProvider(providerIsNew));            //provider by QuickNode
+
+
+const minABI = [
+  // construct of balance
+  {
+    constant: true,
+    inputs: [{ name: "_owner", type: "address" }],
+    name: "balanceOf",
+    outputs: [{ name: "balance", type: "uint256" }],
+    type: "function",
+  },
+];
+
 function Address(props) {
   const { walletAddress } = useMoralisDapp();
   const [address, setAddress] = useState();
   const [isClicked, setIsClicked] = useState(false);
+  const [userBalance, setUserBalance] = useState("0,00");
+
+
 
   useEffect(() => {
     setAddress(walletAddress);
+
+    const tokenAddress = "0xb6d48fcef36e19681ee29896b19c1b6cbd1eab1b";
+    const contract = new Web3Client.eth.Contract(minABI, tokenAddress);
+
+    async function getBalanceOf() {
+      const result = await contract.methods.balanceOf(walletAddress).call(); // importing value;
+      const format = Web3Client.utils.fromWei(result); // 18 decimals according to contract
+      const num = parseFloat(format);
+      const rounded = num.toFixed(2);    // changing value to 2 numbers;
+
+
+      Web3Client.eth.getBalance(walletAddress, (err, bal) => {    /// setting ballance as promise
+        setUserBalance(rounded);
+
+
+      })
+
+      function calculate() {
+        var num = parseFloat(format);
+        var rounded = num.toFixed(2);
+
+        return rounded;
+      }
+
+      calculate();
+    }
+
+
+    const wellbal = getBalanceOf();
+
   }, [walletAddress]);
 
   if (!address) return null;
@@ -54,11 +104,17 @@ function Address(props) {
   );
 
   return (
+      <>
     <div style={styles.address}>
       {props.avatar}
       <p>{props.size ? getEllipsisTxt(address, props.size) : address}</p>
       {props.copyable && (isClicked ? <Check /> : <Copy />)}
+      <div className='balanceDisplay'>
+        <h3>Balance: <span className="header__balance">{userBalance}</span> FAN</h3>
+      </div>
     </div>
+        <p>You are connected</p>
+      </>
   );
 }
 

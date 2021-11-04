@@ -1,18 +1,39 @@
 import React, {useState, useEffect} from 'react';
-import {ethers} from 'ethers';
-import "./css/datatoken.css";
-import Lottery_Setup from "./js/Lottery_Setup";
+import "./css/lottery_section_css.css";
+import Wallet from "./components/Wallet/Wallet";
 
 
+    class LotterySection extends React.Component {
 
+        constructor(props) {
+            super(props);
+            this.state = {
+                showComponent: false,
+            };
+            this._onButtonClick = this._onButtonClick.bind(this);
+        }
 
-const LotterySection = () => {
+        _onButtonClick() {
+            this.setState({
+                showComponent: true,
 
-    return (
-        <>
-                <Lottery_Setup />
-        </>
-    );
-};
+            });
+
+        }
+
+        render() {
+            return (
+                <div className="buyticket__container">
+                    <button onClick={this._onButtonClick}>BUY TICKET</button>
+                    {this.state.showComponent ?
+                        <Wallet /> :
+                        null
+                    }
+
+                </div>
+            );
+        }
+    }
+
 
 export default LotterySection;

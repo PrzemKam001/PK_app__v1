@@ -4,7 +4,7 @@
     margin-left: 15px;
     min-width: 480px;
     max-width: 999px;
-    color: #ffffff;
+    
     background-image: linear-gradient(to bottom right, #000000, #614051);
     font-family: 'PT Sans Narrow', sans-serif;
 }
@@ -31,4 +31,12 @@
     left:50%;
     transform: translate(-50%,-50%);
     border-radius: 15px;
+}
+
+.buyticket__container {
+    border: 5px solid #ff0789;
+    width: 100%;
+    margin: 30px;
+    padding: 20px;
+
 }

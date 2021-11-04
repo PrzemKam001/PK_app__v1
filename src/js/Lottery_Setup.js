@@ -71,10 +71,6 @@ const Lottery_Setup = () => {
     var yourcodenumber = parseInt(newyourcode, 10);
 
 
-
-
-
-
     useEffect(() => {
         if (yourcodenumber === winvariable) {                                    // OTWIERA MODAL
             console.log("WYGRANAAAA")
@@ -83,6 +79,13 @@ const Lottery_Setup = () => {
             console.log("Przegrana :(")
         }                                                // too many renders - useEffect
     },[draw])
+
+
+    const handleClose = () => {
+        const closefunc = document.querySelector(".lottery__win__box");
+        closefunc.style.display = 'none';
+        console.log(closefunc, "nasz div");
+    }
 
 
     console.log(yourcodenumber, typeof(yourcodenumber), winvariable , typeof(winvariable), newyourcode, typeof(newyourcode));
@@ -95,15 +98,18 @@ const Lottery_Setup = () => {
                 <form><label>WKLEJ SWÓJ KOD</label><input />
                 <button>SUBMIT</button>
                 </form>
+                    <button onClick={handleClose}>Close</button>
                 </div>
+        <div className="final_lottery_box">
 
-                <button onClick={handleClick}>Start</button>
-                <p>{draw} :yours code of lottery </p>
+                <button onClick={handleClick} className="btn__lottery__start">Start</button>
+                <p class="lottery__basic__text">{draw} :yours code of lottery </p>
 
                 <ul>{winners.map((winner, i) => {
                     return <li key={i}>{winner.firstcode}</li>
                 })}
                 </ul>
+        </div>
 
             </>
         )

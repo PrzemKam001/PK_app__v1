@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
+import Lottery_Setup from "../../js/Lottery_Setup";
+import "../../css/final_lottery_box.css";
 
 
 const styles = {
@@ -74,16 +76,16 @@ function Transfer() {
   const [tx, setTx] = useState();
   const [amount, setAmount] = useState(101);
   const [isPending, setIsPending] = useState(false);
+  const [drawbox, setDrawbox] = useState("none");
 
   useEffect(() => {
     if (token && amount && receiver) setTx({ amount, receiver, token });
   }, [token, amount, receiver]);
 
 
-
-
-
   async function transfer() {
+
+
     const { amount, receiver, token } = tx;
     const options = {
       type: "erc20",
@@ -95,16 +97,33 @@ function Transfer() {
     setIsPending(true);
     await Moralis.transfer(options)
       .then((tx) => {
-        console.log(tx);
+        console.log(tx, "MOŻE TO TE DANE KTÓRE CHCE?", tx.status , tx.gasUsed );
         setIsPending(false);
+
+        if (tx.status === true) {
+          console.log("POSZLO ZNAKOMICIE, TERAZ TUTAJ OTWÓRZ DIV");
+          setDrawbox("block");
+
+        }
+
+
       })
       .catch((e) => {
         alert(e.message);
         setIsPending(false);
       });
+
+
+
+
   }
 
+
   return (
+      <>
+        <div clasName="final_lottery_box" style={{display: drawbox}}>
+          <Lottery_Setup />
+        </div>
     <div style={styles.card}>
       <div style={styles.tranfer}>
         <div style={styles.header}>
@@ -118,6 +137,7 @@ function Transfer() {
       </div>
 
     </div>
+        </>
   );
 }
 
