@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../form_form.css";
 import { db } from "./firebase";
 
 const Form_Setup = () => {
@@ -31,6 +30,7 @@ const Form_Setup = () => {
     };
 
     return (
+        <div className="form__modal__inside__container">
         <form className="form" onSubmit={handleSubmit}>
             <h1>THIS IS THE PLACE WHEN YOU CAN SEND US YOUR AMA QUESTION</h1>
 
@@ -41,7 +41,7 @@ const Form_Setup = () => {
                 onChange={(e) => setQuestion(e.target.value)}
             />
 
-            <label>Additional Message</label>
+            <label>How long You are holding FAN token</label>
             <select value={yourperiod} onChange={(e) => setYourperiod(e.target.value)}>
                 <option value="From0">From day 0</option>
                 <option value="3months">About 3 months</option>
@@ -56,6 +56,7 @@ const Form_Setup = () => {
                 Submit
             </button>
         </form>
+        </div>
     );
 };
 

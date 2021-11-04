@@ -36,11 +36,14 @@ class Form extends Component {
                     <img src={Form_icon}/>
                        <h1 className="form__basic__text">To be sure that we will answer on Yours question use our form.</h1>
                    </div>
-                <button type="button" onClick={this.showModal}>
+                    <div>
+                    <p className="small__text__basic">Don't worry You can ask us anything now because of that form.</p>
+                <button type="button" className="btn__form__addquestion" onClick={this.showModal}>
                     ADD QUESTION
                 </button>
+                    </div>
                </div>
-                   <p class="small__text__basic">v.0.0.1 copyrights: -P- 2021</p>
+                   <p className="small__text__basic">v.0.0.1 copyrights: -P- 2021</p>
                </div>
                    <div className="section__line"></div>
                 </>

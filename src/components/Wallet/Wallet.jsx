@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Transfer from "./Transfer";
 import Address from "../Address/Address";
 
 
 const styles = {
+
   title: {
     fontSize: "30px",
     fontWeight: "600",
@@ -46,29 +47,12 @@ const styles = {
 };
 
 
-class CloseAction extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      showComponent: true,
-    };
-    this._onButtonClick = this._onButtonClick.bind(this);
-  }
-
-  _onButtonClick() {
-    this.setState({
-      showComponent: false,
-
-    });
-
-
-  }
-}
-
 
 
 function Wallet() {
+
+  const [show, setShow] = useState(true);
+
 
 
   return (
@@ -77,10 +61,13 @@ function Wallet() {
       <div style={styles.card}>
         <div style={styles.header}>
                     <Address size="6" copyable />
+          <div>
+            <button onClick={() => setShow((s) => !s)}>CLOSE</button>
 
+          </div>
 
         </div>
-        <button>close</button>
+
         <div style={styles.navLinks}>
 
           <Transfer />
