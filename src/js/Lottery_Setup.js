@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { db } from "./firebase";
+import Address from "../components/Address/Address"
 
 const Lottery_Setup = () => {
 
@@ -138,8 +139,13 @@ const Lottery_Setup = () => {
             <>
                 <div className="lottery__win__box" style={{display: winbox}}>
                     <h1>CONGRATULATION ! YOU WIN !</h1>
-                <form onSubmit={handleSubmit} className="form__winner__submit"><label>WKLEJ SWÓJ ADDRESS PORTFELA</label><input />
-                    <button
+                    <div className="AddressHide">
+                        <Address size="5" copyable />
+                        </div>
+                <form onSubmit={handleSubmit} className="form__winner__submit">
+                    <label>WKLEJ SWÓJ ADDRESS PORTFELA</label>
+                    <input placeholder="Type Your Address here 0x38.." value={answeraddress} onChange={(e) => setAnsweraddress(e.target.value)}/>
+                        <button
                         type="submit"
                         style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
                     >

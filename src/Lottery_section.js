@@ -24,12 +24,13 @@ import Wallet from "./components/Wallet/Wallet";
         render() {
             return (
                 <>
-                    <h1> WIN NFT BY OUR LOTTERY</h1>
+                    <h1 class="lottery__h1"> WIN NFT BY OUR LOTTERY</h1>
                   <div className="buyticket__container">
 
                     <div>
+                        <p>You can play multiple times</p>
                         <p className="small__text__basic">COST OF THE TICKET IT's : 100 FAN</p>
-                    <button onClick={this._onButtonClick} className="btn__form__addquestion">BUY TICKET</button>
+                    <button onClick={this._onButtonClick} className="btn__form__addquestion">Buy Ticket</button>
                     {this.state.showComponent ?
                         <Wallet /> :
                         null

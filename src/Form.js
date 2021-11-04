@@ -39,7 +39,7 @@ class Form extends Component {
                     <div>
                     <p className="small__text__basic">Don't worry You can ask us anything now because of that form.</p>
                 <button type="button" className="btn__form__addquestion" onClick={this.showModal}>
-                    ADD QUESTION
+                    Add Question
                 </button>
                     </div>
                </div>
