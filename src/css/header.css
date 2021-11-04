@@ -8,6 +8,8 @@
     min-width: 480px;
     max-width: 999px;
     color: #ffffff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     background-image: linear-gradient(to bottom right, #000000, #614051);
     font-family: 'PT Sans Narrow', sans-serif;
 }

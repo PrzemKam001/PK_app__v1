@@ -54,18 +54,22 @@ function Wallet() {
 
   const [show, setShow] = useState(true);
 
+  const [value, setValue] = useState("block");
 
+  function refreshPage() {
+    window.location.reload();
+  }
 
 
   return (
-    <div maxWidth="1200px" className="buyticket__box"  style={{ display: show ? "block" : "none" }}>
+    <div maxWidth="1200px" className="buyticket__box"  style={{ display: "block"}}>
 
       <div style={styles.card}>
         <div style={styles.header}>
           <div className="AddressHide">
                     <Address size="6" copyable />
           <div>
-            <button onClick={() => setShow((s) => !s)}>CLOSE</button>
+            <button onClick={refreshPage}>CLOSE</button>
 
           </div>
           </div>

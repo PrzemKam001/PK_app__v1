@@ -3,8 +3,8 @@ import "./css/lottery_section_css.css";
 import Wallet from "./components/Wallet/Wallet";
 
 
-    class LotterySection extends React.Component {
 
+    class LotterySection extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
@@ -24,12 +24,24 @@ import Wallet from "./components/Wallet/Wallet";
         render() {
             return (
                 <>
-                <div className="buyticket__container">
-                    <button onClick={this._onButtonClick}>BUY TICKET</button>
+                    <h1> WIN NFT BY OUR LOTTERY</h1>
+                  <div className="buyticket__container">
+
+                    <div>
+                        <p className="small__text__basic">COST OF THE TICKET IT's : 100 FAN</p>
+                    <button onClick={this._onButtonClick} className="btn__form__addquestion">BUY TICKET</button>
                     {this.state.showComponent ?
                         <Wallet /> :
                         null
                     }
+                    </div>
+                    <div>
+                        <p>here functional modal part</p>
+                        <p className="small__text__basic">GENERAL RULES OF THE LOTTERY</p>
+                        <button type="button" className="btn__form__addquestion" onClick={this.showModal}>
+                            Check Reward
+                        </button>
+                    </div>
                 </div>
                 </>
             );

@@ -7,6 +7,8 @@
     color: #ffffff;
     background-image: linear-gradient(to bottom right, #000000, #614051);
     font-family: 'PT Sans Narrow', sans-serif;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 
 }
 

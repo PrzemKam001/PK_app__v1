@@ -9,6 +9,8 @@ const Lottery_Setup = () => {
     const [winbox, setWinbox] = useState("none");
     const [lotterybox, setLotterybox] = useState ("block");
     const [answeraddress, setAnsweraddress] = useState("");
+    const [showElement, setShowElement] = React.useState(true);
+    const [startstate, setStartstate] = useState ("");
 
     const [loader, setLoader] = useState(false);
 
@@ -39,15 +41,23 @@ const Lottery_Setup = () => {
 
 
         const handleClick = e => {
-            const nums = Array.from({length: winvariable.toString().length}, () => random(1, 5)); // losuje tyle liczb ile kod ma znaków zmiana zmiennej na string
+
+            const startbutton = document.querySelector(".btn__lottery__start");
+            startbutton.setAttribute("disabled", "disabled");
+
+            const nums = Array.from({length: winvariable.toString().length}, () => random(1, 1)); // losuje tyle liczb ile kod ma znaków zmiana zmiennej na string
             yourCodeArray.push(nums);
             let k = setDraw(nums);
+
+            setTimeout(function () {
+                    setShowElement(false);
+                }, 3000);
+
 
             return {...draw};
 
         };
 
-        console.log(...yourCodeArray, "czy ma liczby ?! <<<<<<<<<<<<");
 
         const apiVariableArray = [];           /// destrukturyzacja tablicy otrzymanej z bazy danych
 
@@ -59,7 +69,6 @@ const Lottery_Setup = () => {
     const [winvariable] = x;                 /// zmienna odpowiadajaca za ilość losowanych liczb
       /// zmienna -> w string żeby wylosować jej długość
                                                                      //console.log(typeof(winvariable));
-
 
      const yourcode =  draw;
   //   const [yourcodenum, b] = yourcode
@@ -80,7 +89,7 @@ const Lottery_Setup = () => {
             console.log("WYGRANAAAA")
             setWinbox("block");
         } else {
-            console.log("Przegrana :(");
+            console.log(...draw, "Przegrana :(");
             setLotterybox("none");
             // HERE SHOULD CLOSE THE Purple DIV (.final_lottery_box) WITH start button etc. after 2-3s
 
@@ -91,18 +100,21 @@ const Lottery_Setup = () => {
     const handleClose = () => {
         const closefunc = document.querySelector(".lottery__win__box");
         closefunc.style.display = 'none';
-        console.log(closefunc, "nasz div");
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoader(true);
 
-        db.collection("lottry_winner")
+        const submitbutton = document.querySelector(".form__winner__submit");
+        submitbutton.setAttribute("disabled", "disabled");
+
+        db.collection("lottery_winner")
             .add({
                 answeraddress: answeraddress,
             })
             .then(() => {
+                setWinbox("none");
                 setLoader(false);
                 alert("Your message has been submitted👍");
             })
@@ -110,6 +122,9 @@ const Lottery_Setup = () => {
                 alert(error.message);
                 setLoader(false);
             });
+
+
+
 
         setAnsweraddress("");
 
@@ -123,7 +138,7 @@ const Lottery_Setup = () => {
             <>
                 <div className="lottery__win__box" style={{display: winbox}}>
                     <h1>CONGRATULATION ! YOU WIN !</h1>
-                <form onSubmit={handleSubmit}><label>WKLEJ SWÓJ ADDRESS PORTFELA</label><input />
+                <form onSubmit={handleSubmit} className="form__winner__submit"><label>WKLEJ SWÓJ ADDRESS PORTFELA</label><input />
                     <button
                         type="submit"
                         style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
@@ -133,6 +148,8 @@ const Lottery_Setup = () => {
                 </form>
                     <button onClick={handleClose}>Close</button>
                 </div>
+                <div>
+                    {showElement ? (
         <div className="final_lottery_box" >
 
                 <button onClick={handleClick} className="btn__lottery__start">Start</button>
@@ -142,7 +159,10 @@ const Lottery_Setup = () => {
                     return <li key={i}>{winner.firstcode}</li>
                 })}
                 </ul>
-        </div>
+        </div>  ) : (
+                        <div></div>
+                    )}{" "}
+                </div>
 
             </>
         )

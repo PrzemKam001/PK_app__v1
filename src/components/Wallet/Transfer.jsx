@@ -90,7 +90,7 @@ function Transfer() {
     const { amount, receiver, token } = tx;
     const options = {
       type: "erc20",
-      amount: Moralis.Units.Token("100", "18"),
+      amount: Moralis.Units.Token("2", "18"),
       receiver,
       contractAddress: "0xb6d48fcef36e19681ee29896b19c1b6cbd1eab1b",
     };
