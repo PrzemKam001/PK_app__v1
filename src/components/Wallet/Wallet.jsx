@@ -4,6 +4,7 @@ import Address from "../Address/Address";
 
 
 const styles = {
+  display: "block",
 
   title: {
     fontSize: "30px",
@@ -54,9 +55,10 @@ function Wallet() {
   const [show, setShow] = useState(true);
 
 
+  
 
   return (
-    <div maxWidth="1200px" className="buyticket__box">
+    <div maxWidth="1200px" className="buyticket__box"  style={{ display: show ? "block" : "none" }}>
 
       <div style={styles.card}>
         <div style={styles.header}>
