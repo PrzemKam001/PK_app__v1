@@ -23,14 +23,15 @@ import Wallet from "./components/Wallet/Wallet";
 
         render() {
             return (
+                <>
                 <div className="buyticket__container">
                     <button onClick={this._onButtonClick}>BUY TICKET</button>
                     {this.state.showComponent ?
                         <Wallet /> :
                         null
                     }
-
                 </div>
+                </>
             );
         }
     }

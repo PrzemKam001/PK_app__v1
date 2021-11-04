@@ -55,19 +55,20 @@ function Wallet() {
   const [show, setShow] = useState(true);
 
 
-  
+
 
   return (
     <div maxWidth="1200px" className="buyticket__box"  style={{ display: show ? "block" : "none" }}>
 
       <div style={styles.card}>
         <div style={styles.header}>
+          <div className="AddressHide">
                     <Address size="6" copyable />
           <div>
             <button onClick={() => setShow((s) => !s)}>CLOSE</button>
 
           </div>
-
+          </div>
         </div>
 
         <div style={styles.navLinks}>

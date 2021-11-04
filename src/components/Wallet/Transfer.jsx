@@ -77,6 +77,7 @@ function Transfer() {
   const [amount, setAmount] = useState(101);
   const [isPending, setIsPending] = useState(false);
   const [drawbox, setDrawbox] = useState("none");
+  const [closewallet, setClosewallet] = useState("block");
 
   useEffect(() => {
     if (token && amount && receiver) setTx({ amount, receiver, token });
@@ -97,12 +98,13 @@ function Transfer() {
     setIsPending(true);
     await Moralis.transfer(options)
       .then((tx) => {
-        console.log(tx, "MOŻE TO TE DANE KTÓRE CHCE?", tx.status , tx.gasUsed );
+        console.log(tx, tx.status , tx.gasUsed );
         setIsPending(false);
 
         if (tx.status === true) {
           console.log("POSZLO ZNAKOMICIE, TERAZ TUTAJ OTWÓRZ DIV");
           setDrawbox("block");
+          setClosewallet("none");
 
         }
 
@@ -124,19 +126,27 @@ function Transfer() {
         <div clasName="final_lottery_box" style={{display: drawbox}}>
           <Lottery_Setup />
         </div>
-    <div style={styles.card}>
-      <div style={styles.tranfer}>
-        <div style={styles.header}>
-          <h3>BUY TICKET</h3>
+        <div maxWidth="1200px" className="buyticket__box"style={{display: closewallet}}>
+
+    <div style={styles.card} style={{display: closewallet}}>
+      <div style={styles.tranfer} style={{display: closewallet}}>
+        <div style={styles.header} style={{display: closewallet}}>
+          <div className="AddressHide" style={{display: closewallet}}>
+
+          </div>
+                   <h3>BUY TICKET</h3>
           <h1>cost: 100 FAN</h1>
+          <div style={styles.navLinks} style={{display: closewallet}}>
         </div>
 
         <button style={styles.button} disabled={!tx} onClick={() => transfer()}>
           {isPending ? <Loader /> : "Transfer TUTAJ"}
         </button>
       </div>
+    </div>
 
     </div>
+        </div>
         </>
   );
 }

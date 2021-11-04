@@ -7,6 +7,7 @@ const Lottery_Setup = () => {
     const [draw, setDraw] = useState([]);
     const [winners, setWinner] = useState([]);
     const [winbox, setWinbox] = useState("none");
+    const [lotterybox, setLotterybox] = useState ("block");
 
         useEffect(() => {
             db.collection("winner")
@@ -76,7 +77,10 @@ const Lottery_Setup = () => {
             console.log("WYGRANAAAA")
             setWinbox("block");
         } else {
-            console.log("Przegrana :(")
+            console.log("Przegrana :(");
+            setLotterybox("none");
+            // HERE SHOULD CLOSE THE Purple DIV (.final_lottery_box) WITH start button etc. after 2-3s
+
         }                                                // too many renders - useEffect
     },[draw])
 
@@ -90,17 +94,17 @@ const Lottery_Setup = () => {
 
     console.log(yourcodenumber, typeof(yourcodenumber), winvariable , typeof(winvariable), newyourcode, typeof(newyourcode));
 
-
+//style={{display: closewallet}}
         return (
             <>
                 <div className="lottery__win__box" style={{display: winbox}}>
                     <h1>CONGRATULATION ! YOU WIN !</h1>
-                <form><label>WKLEJ SWÓJ KOD</label><input />
+                <form><label>WKLEJ SWÓJ ADDRESS PORTFELA</label><input />
                 <button>SUBMIT</button>
                 </form>
                     <button onClick={handleClose}>Close</button>
                 </div>
-        <div className="final_lottery_box">
+        <div className="final_lottery_box" >
 
                 <button onClick={handleClick} className="btn__lottery__start">Start</button>
                 <p class="lottery__basic__text">{draw} :yours code of lottery </p>
