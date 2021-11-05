@@ -5,6 +5,7 @@ import Data_Token from "./DataToken";
 import Form from "./Form";
 import LotterySection from "./Lottery_section";
 import "./css/basics.css"
+import Welcome from "./Welcome";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
 
   return ( // Header = WalletSetup + Account + Address + Chains + Data_Token
     <>
+        <Welcome />
         <div className="app__background">
                 <Header></Header>
                 <Data_Token />

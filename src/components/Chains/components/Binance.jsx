@@ -8,6 +8,7 @@ function Binance({ onClick, activeChain }) {
     opacity: isActive ? "1" : "0.5",
     transition: "all 0.2s",
     filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25))",
+    position: "flexible",
   };
 
   useMemo(() => setActive(activeChain), [activeChain]);

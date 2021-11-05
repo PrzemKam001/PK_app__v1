@@ -65,7 +65,7 @@ function Account() {
   return (
     <div style={{ ...styles.account, ...styles.wrapper }} onClick={() => logout()}>
 
-      <Address avatar size="5" /><Chains bsc />
+      <Address avatar size="5" />
     </div>
   );
 }
