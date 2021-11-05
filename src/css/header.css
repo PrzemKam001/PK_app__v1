@@ -12,6 +12,7 @@
     border-top-right-radius: 20px;
     background-image: linear-gradient(to bottom right, #000000, #614051);
     font-family: 'PT Sans Narrow', sans-serif;
+    box-shadow: 10px 5px 5px black;
 }
 
 .logo__top {

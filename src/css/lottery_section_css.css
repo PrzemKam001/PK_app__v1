@@ -6,6 +6,7 @@
     max-width: 999px;
     background-image: linear-gradient(to bottom right, #000000, #614051);
     font-family: 'PT Sans Narrow', sans-serif;
+    box-shadow: 10px 5px 5px black;
 }
 
 .lottery__parent {
@@ -43,8 +44,33 @@
     justify-content: space-around;
 
 }
+.lottery__win__box__form {
+    border: 2px solid #222222;
+    padding: 5px;
 
 
+}
 .lottery__h1 {
     color: #614051;
+}
+
+.lottery__win__box_text {
+    padding: 20px;
+}
+
+.AddressHide {
+    padding: 50px;
+    margin-bottom: 10px;
+}
+
+.lottery__win__label {
+    padding: 10px;
+}
+
+
+.lottery__win__box__close {
+    box-sizing: border-box;
+    margin: 50px;
+    font-size: 12px;
+
 }

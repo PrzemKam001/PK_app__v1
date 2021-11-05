@@ -4,8 +4,7 @@ body {
 
 
 .app__background {
-    background-color: black;
-    width: 1050px;
+    max-width: 1050px;
     margin: 20px;
     padding: 20px;
     height: auto;

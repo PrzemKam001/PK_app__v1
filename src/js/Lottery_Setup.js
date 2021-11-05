@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { db } from "./firebase";
-import Address from "../components/Address/Address"
+import Address from "../components/Address/Address";
+import "../css/lottery_section_css.css";
 
 const Lottery_Setup = () => {
 
@@ -54,9 +55,7 @@ const Lottery_Setup = () => {
                     setShowElement(false);
                 }, 3000);
 
-
             return {...draw};
-
         };
 
 
@@ -138,12 +137,13 @@ const Lottery_Setup = () => {
         return (
             <>
                 <div className="lottery__win__box" style={{display: winbox}}>
-                    <h1>CONGRATULATION ! YOU WIN !</h1>
+                    <h1 className="lottery__win__box_text">CONGRATULATION ! YOU WIN !</h1>
                     <div className="AddressHide">
                         <Address size="5" copyable />
                         </div>
+                    <div className="lottery__win__box__form">
                 <form onSubmit={handleSubmit} className="form__winner__submit">
-                    <label>WKLEJ SWÓJ ADDRESS PORTFELA</label>
+                    <label className="lottery__win__label">SEND US YOUR WALLET ADDRESS</label>
                     <input placeholder="Type Your Address here 0x38.." value={answeraddress} onChange={(e) => setAnsweraddress(e.target.value)}/>
                         <button
                         type="submit"
@@ -152,7 +152,8 @@ const Lottery_Setup = () => {
                         Submit
                     </button>
                 </form>
-                    <button onClick={handleClose}>Close</button>
+                    <button onClick={handleClose} className="lottery__win__box__close">Close</button>
+                </div>
                 </div>
                 <div>
                     {showElement ? (
