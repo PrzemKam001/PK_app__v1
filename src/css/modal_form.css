@@ -5,6 +5,7 @@
     width:100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 
 }
 
@@ -12,9 +13,11 @@
     position:fixed;
     width: 50%;
     height: 300px;
+    padding: 20px;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    z-index: 1;
 
 }
 
@@ -26,14 +29,10 @@
     display: none;
 }
 
-.modal__form__main {
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    border-radius: 20px;
-
-
+.modal__background {
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
+
 
 .form__btn__close {
     margin: 10px;
@@ -41,35 +40,35 @@
 
 }
 
-
-
 .modal__form__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #222222;
-    border-radius: 20px;
+    background-color: #ce03fc;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 2%;
+    font-size: 12px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-
-
 
 
 .form__modal__inside__container {
     padding: 20px;
-    background-color: #8b72be;
-    border-radius: 20px;
+    background-color: #bbbbbb;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 body,
 input,
 textarea,
 button {
-    font-family: "Inter", sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 
-
-/* Contact.js */
 .form {
     display: flex;
     flex-direction: column;
@@ -81,50 +80,66 @@ button {
 }
 
 .form > input,
-textarea {
+select {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    color: rgb(0, 0, 32);
+}
+
+
+input ,textarea {
     padding: 10px;
     border-radius: 3px;
     /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid lightgray;
     /* border: none; */
     background: #fff;
-    font-size: 16px;
+    font-size: 12px;
     color: rgb(0, 0, 32);
     outline: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .form > input:focus,
 textarea:focus {
-    border: 1px solid rgb(0, 0, 196);
+    border: 1px solid #0ee8c4;
 }
 
 .form > textarea {
     height: 150px;
     max-width: 400px;
     min-height: 100px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .form > label {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     color: rgb(0, 0, 32);
     font-weight: bold;
 }
 
-.form > button {
+.form > .button__form__submit {
     padding: 20px;
     border: none;
-    background-color: rgb(2, 2, 110);
-    font-weight: 500;
+    background-color: #0ee8c4;
+    font-weight: 900;
     font-size: 20px;
-    border-radius: 3px;
-    color: #fff;
+    border-radius: 15px;
+    color: #777777;
+    margin-top: 7%;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    margin-top: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
 }
 
 .form > button:hover {
-    background-color: rgb(0, 0, 196);
+    background-color: #0ee8c4;
 }
 
+
+.form__h1__modal {
+    color: #e88a0e;
+    padding: 5px;
+    font-size: 16px;
+}

@@ -1,21 +1,7 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
 import { getEllipsisTxt } from "../../utils/formatters";
 
-
-
-const styles = {
-  address: {
-    padding: "0 6px",
-    height: "36px",
-    display: "flex",
-    gap: "5px",
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
-    borderRadius: "9px",
-    alignItems: "center",
-  },
-};
 
 const Web3 = require("web3");
 const providerIsNew = "https://floral-billowing-glade.bsc.quiknode.pro/29ea12cb502ef5492fc8c5800415e29b801c933b/"
@@ -105,7 +91,7 @@ function Address(props) {
 
   return (
       <>
-    <div style={styles.address}>
+    <div className="address__inside">
       {props.avatar}
       <p>{props.size ? getEllipsisTxt(address, props.size) : address}</p>
       {props.copyable && (isClicked ? <Check /> : <Copy />)}
@@ -113,7 +99,7 @@ function Address(props) {
         <h3>Balance: <span className="header__balance">{userBalance}</span> FAN</h3>
       </div>
     </div>
-        <p>You are connected</p>
+        <p className="connected__text">Connected</p>
       </>
   );
 }

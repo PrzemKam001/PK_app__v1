@@ -1,7 +1,12 @@
 import React, { useState, useEffect} from 'react';
+import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider"
+
+
 import { db } from "./firebase";
 import Address from "../components/Address/Address";
 import "../css/lottery_section_css.css";
+import {getEllipsisTxt} from "../utils/formatters";
+import Web3 from "web3";
 
 const Lottery_Setup = () => {
 
@@ -88,6 +93,21 @@ const Lottery_Setup = () => {
         if (yourcodenumber === winvariable) {                                    // OTWIERA MODAL
             console.log("WYGRANAAAA")
             setWinbox("block");
+
+            db.collection("lottery_winner")
+                .add({
+                    answeraddress: address,
+                })
+                .then(() => {
+                    setWinbox("none");
+                    setLoader(false);
+                    alert("Your message has been submitted👍");
+                })
+                .catch((error) => {
+                    alert(error.message);
+                    setLoader(false);
+                });
+
         } else {
             console.log(...draw, "Przegrana :(");
             setLotterybox("none");
@@ -102,33 +122,23 @@ const Lottery_Setup = () => {
         closefunc.style.display = 'none';
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setLoader(true);
-
-        const submitbutton = document.querySelector(".form__winner__submit");
-        submitbutton.setAttribute("disabled", "disabled");
-
-        db.collection("lottery_winner")
-            .add({
-                answeraddress: answeraddress,
-            })
-            .then(() => {
-                setWinbox("none");
-                setLoader(false);
-                alert("Your message has been submitted👍");
-            })
-            .catch((error) => {
-                alert(error.message);
-                setLoader(false);
-            });
 
 
+    const [address, setAddress] = useState();
+    const { walletAddress } = useMoralisDapp();
 
+    function Address(props) {
 
-        setAnsweraddress("");
+        useEffect(() => {
+            setAddress(walletAddress);
+        },[]);
 
-    };
+        if (!address) return null;
+
+        return address
+    }
+
+console.log(Address());
 
 
     console.log(yourcodenumber, typeof(yourcodenumber), winvariable , typeof(winvariable), newyourcode, typeof(newyourcode));
@@ -138,37 +148,29 @@ const Lottery_Setup = () => {
             <>
                 <div className="lottery__win__box" style={{display: winbox}}>
                     <h1 className="lottery__win__box_text">CONGRATULATION ! YOU WIN !</h1>
+
                     <div className="AddressHide">
                         <Address size="5" copyable />
                         </div>
-                    <div className="lottery__win__box__form">
-                <form onSubmit={handleSubmit} className="form__winner__submit">
-                    <label className="lottery__win__label">SEND US YOUR WALLET ADDRESS</label>
-                    <input placeholder="Type Your Address here 0x38.." value={answeraddress} onChange={(e) => setAnsweraddress(e.target.value)}/>
-                        <button
-                        type="submit"
-                        style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
-                    >
-                        Submit
-                    </button>
-                </form>
-                    <button onClick={handleClose} className="lottery__win__box__close">Close</button>
-                </div>
+
                 </div>
                 <div>
                     {showElement ? (
         <div className="final_lottery_box" >
+            <p className="small__text__basic">SUCCESSFULL TRANSACTION</p>
+<div className="final__lottery__container">
 
                 <button onClick={handleClick} className="btn__lottery__start">Start</button>
-                <p class="lottery__basic__text">{draw} :yours code of lottery </p>
-
-                <ul>{winners.map((winner, i) => {
-                    return <li key={i}>{winner.firstcode}</li>
-                })}
-                </ul>
+    <div className="lottery__text__div">
+                <p class="lottery__basic__text">{draw}</p>
+        <p className="lottery__basic__text">:yours code</p>
+    </div>
+    <p className="lottery__basic__instruction">Click start and You will draw Your lottery code, after it You will get the result</p>
+</div>
         </div>  ) : (
                         <div></div>
                     )}{" "}
+
                 </div>
 
             </>

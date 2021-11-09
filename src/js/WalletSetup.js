@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {ethers} from 'ethers';
 import { useMoralis } from "react-moralis";
 import Account from "components/Account";
-import logo from "images/logo_fan.png";
+import logo from "images/logo_fan02.png";
 
 
 const WalletSetup = () => {

@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from "react";
 import { useMoralis } from "react-moralis";
 import Account from "./components/Account";
-import "./css/basics.css";
+import "./css/welcome.css";
 import Chains from "./components/Chains/Chains";
 import Address from "./components/Address/Address";
+
 
 const styles = {
     account: {
@@ -35,7 +36,9 @@ function Welcome() {
 
         return (
             <>
+                <div className="welcome__background">
                 <div className="welcome__page__container" style={{display: "block"}}>
+                    <h1 className="h1__welcome">WELCOME !</h1>
             <div style={styles.account}>
                 <p
                     onClick={() => authenticate({ signingMessage: "Hello World!" })}
@@ -43,9 +46,12 @@ function Welcome() {
                 >
                     Authenticate
                 </p>
-                <p>Install MetaMask</p>
+
                 <Chains bsc />
             </div>
+                    <span>Install MetaMask</span>
+                </div>
+
                 </div>
                 </>
         );

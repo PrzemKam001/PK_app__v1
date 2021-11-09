@@ -1,17 +1,17 @@
 .container__form {
     box-sizing: border-box;
     padding: 5px 15px;
-    margin-left: 15px;
     min-width: 480px;
     max-width: 999px;
     color: #ffffff;
-    background-image: linear-gradient(to bottom right, #000000, #614051);
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Lato', sans-serif;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 10px 5px 5px black;
-
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
+
+
+
 
 .form__container_basic {
     display: flex;
@@ -20,26 +20,39 @@
 }
 
 .form__left__parent {
-    padding: 50px;
+    background-color: #fff;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    max-width: 400px;
-    border: 2px solid #ff0789;
+    max-width: 60%;
+    border: 2px solid #ce03fc;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .form__title {
-    font-size: 34px;
+    font-size: 22px;
     text-align: center;
     margin-top: 20px;
     font-weight: 700;
+    margin-bottom: 5%;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    background: url(https://assets.website-files.com/60487d3f7590e553f2d51d2a/60f95cac38aae1589cc9e873_banner_1200_bg.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
 }
 
 .form__basic__text {
-    padding: 20px;
-    font-size: 12px;
-    color: #ff0789;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: 100;
+    color:  #ce03fc;
 }
 
 .btn__form__addquestion {

@@ -136,21 +136,31 @@ const DataSetup = () => {
 
 
     return (
-        <div>
-
+        <>
+            <div className="data__display__container">
+        <div className="data__display__content">
             <div className='balanceDisplay'>
-                <p>BURNED BALANCE: <span>{burnBalance}</span> FAN</p>
-                <h3>CIRCULATION: <span>{circBalance}</span> FAN</h3>
-                <p>BUYBACK SALDO: <span>{buybackBalance}</span> FAN</p>
+                <div className="data__display"><i className="fas fa-fire"></i><p className="data__info__txt">BURNED BALANCE: <span>{burnBalance}</span> FAN</p></div>
+                <div className="data__display"><i className="fas fa-fan"></i><p className="data__info__txt">CIRCULATION: <span className="circ__data__txt">{circBalance}</span> FAN</p></div>
+                <div className="data__display"><i className="fas fa-cash-register"></i><p className="data__info__txt">BUYBACK SALDO: <span>{buybackBalance}</span> FAN</p></div>
 
             </div>
+
             <p>    </p>
             <p>{""}</p>
 
 
 
             {errorMessage}
+
         </div>
+            <div className="data__display__chart">
+                <div className='balanceDisplay'>
+                    <p>t</p>
+                </div>
+            </div>
+            </div>
+            </>
     );
 }
 

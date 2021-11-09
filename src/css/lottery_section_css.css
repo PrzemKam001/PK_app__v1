@@ -1,12 +1,10 @@
 .container__lottery {
     box-sizing: border-box;
     padding: 5px 15px;
-    margin-left: 15px;
     min-width: 480px;
     max-width: 999px;
-    background-image: linear-gradient(to bottom right, #000000, #614051);
-    font-family: 'PT Sans Narrow', sans-serif;
-    box-shadow: 10px 5px 5px black;
+    font-family: 'Lato', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .lottery__parent {
@@ -23,25 +21,30 @@
 
 .lottery__win__box {
     position:fixed;
-    background-color: #8b72be;
+    background-color: #bbbbbb;
+    padding: 5%;
     display: none;
-    width: 50%;
+    width: 100%;
     height: 500px;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    border-radius: 15px;
+    border-radius: 20px;
+    z-index: 4;
 }
 
 .buyticket__container {
+    background-color: #eeeeee;
     border: 2px solid;
-    border-color: #8b72be;
+    border-color: #0ee8c4;
+    border-radius: 15px;
     width: 100%;
     margin: 30px;
     padding: 20px;
     margin-left: 4px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
 }
 .lottery__win__box__form {
@@ -50,16 +53,14 @@
 
 
 }
-.lottery__h1 {
-    color: #614051;
-}
+
 
 .lottery__win__box_text {
     padding: 20px;
 }
 
 .AddressHide {
-    padding: 50px;
+    padding: 10px;
     margin-bottom: 10px;
 }
 
@@ -73,4 +74,55 @@
     margin: 50px;
     font-size: 12px;
 
+}
+
+.lottery__h1 {
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    border-radius: 15px;
+    font: 700 2rem/1 "Lato", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+    /* Clip Background Image */
+
+    background: url(https://assets.website-files.com/60487d3f7590e553f2d51d2a/60f95cac38aae1589cc9e873_banner_1200_bg.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+
+}
+
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.lottery__text__instruction {
+    text-align: left;
+    color: #e88a0e;
+    font-size: 13px;
+
+}
+
+.lottery_instruction_box {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 15px;
 }

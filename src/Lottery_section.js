@@ -24,24 +24,21 @@ import Wallet from "./components/Wallet/Wallet";
         render() {
             return (
                 <>
-                    <h1 class="lottery__h1"> WIN NFT BY OUR LOTTERY</h1>
+                    <h1 className="lottery__h1"> Win NFT with our FAN Lottery</h1>
                   <div className="buyticket__container">
 
                     <div>
-                        <p>You can play multiple times</p>
-                        <p className="small__text__basic">COST OF THE TICKET IT's : 100 FAN</p>
-                    <button onClick={this._onButtonClick} className="btn__form__addquestion">Buy Ticket</button>
+                      <button onClick={this._onButtonClick} className="button_cls">Buy Ticket</button>
                     {this.state.showComponent ?
                         <Wallet /> :
                         null
                     }
                     </div>
-                    <div>
-                        <p>here functional modal part</p>
+                    <div className="lottery_instruction_box">
+                        <p className="lottery__text__instruction">Actually one ticket costs: 100 FAN</p>
                         <p className="small__text__basic">GENERAL RULES OF THE LOTTERY</p>
-                        <button type="button" className="btn__form__addquestion" onClick={this.showModal}>
-                            Check Reward
-                        </button>
+                        <p className="lottery__text__instruction">You can play multiple times!</p>
+                        <p className="small__text__basic">When You Win NFT will be send to Your BSC address</p>
                     </div>
                 </div>
                 </>

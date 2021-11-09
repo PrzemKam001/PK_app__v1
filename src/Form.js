@@ -32,13 +32,14 @@ class Form extends Component {
                 <Modal show={this.state.show} handleClose={this.hideModal}>
 
                 </Modal>
-                   <div className="form__left__parent">
                     <img src={Form_icon}/>
-                       <h1 className="form__basic__text">To be sure that we will answer on Yours question use our form.</h1>
+                   <div className="form__left__parent">
+
+                       <h1 className="form__basic__text">Use this form to contact with team and suggest us Yours idea about future development progress.
+                           You can also send us any question which we can reach later and druing next AMA session we will answer You on it.</h1>
                    </div>
                     <div>
-                    <p className="small__text__basic">Don't worry You can ask us anything now because of that form.</p>
-                <button type="button" className="btn__form__addquestion" onClick={this.showModal}>
+                                    <button className="button_cls" type="button" onClick={this.showModal}>
                     Add Question
                 </button>
                     </div>

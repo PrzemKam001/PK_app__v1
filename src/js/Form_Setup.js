@@ -32,9 +32,9 @@ const Form_Setup = () => {
     return (
         <div className="form__modal__inside__container">
         <form className="form" onSubmit={handleSubmit}>
-            <h1>THIS IS THE PLACE WHEN YOU CAN SEND US YOUR AMA QUESTION</h1>
+            <h1 className="form__h1__modal">Send us Yours suggestion / idea or simple question here</h1>
 
-            <label>QUESTION</label>
+            <label>What do You want ask our Team?</label>
             <input
                 placeholder="TYPE YOUR QUESTION HERE"
                 value={question}
@@ -51,7 +51,7 @@ const Form_Setup = () => {
 
             <button
                 type="submit"
-                style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
+                className="button__form__submit"
             >
                 Submit
             </button>

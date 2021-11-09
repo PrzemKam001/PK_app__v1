@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Transfer from "./Transfer";
 import Address from "../Address/Address";
+import "../../css/wallet.css";
 
 
 const styles = {
@@ -62,30 +63,26 @@ function Wallet() {
 
 
   return (
+      <>
     <div maxWidth="1200px" className="buyticket__box"  style={{ display: "block"}}>
-
-      <div style={styles.card}>
-        <div style={styles.header}>
+<div className="wallet__screen">
+      <div className="wallet__container">
+        <div>
           <div className="AddressHide">
                     <Address size="6" copyable />
           <div>
-            <button onClick={refreshPage}>CLOSE</button>
-
+            <button onClick={refreshPage} className="wallett__close">CLOSE</button>
           </div>
           </div>
         </div>
-
-        <div style={styles.navLinks}>
-
           <Transfer />
-
           {/* <NavLink to="/wallet/transactions" style={styles.navLink} activeStyle={styles.activeLink}>
             Transactions
           </NavLink> */}
-
-        </div>
       </div>
+</div>
     </div>
+        </>
   );
 }
 

@@ -4,71 +4,6 @@ import { useMoralis } from "react-moralis";
 import Lottery_Setup from "../../js/Lottery_Setup";
 import "../../css/final_lottery_box.css";
 
-
-const styles = {
-  card: {
-    alignItems: "center",
-    width: "100%",
-  },
-  tranfer: {
-    padding: "20px",
-    boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)",
-  },
-  header: {
-    textAlign: "center",
-  },
-  input: {
-    width: "100%",
-    outline: "none",
-    fontSize: "16px",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textverflow: "ellipsis",
-    appearance: "textfield",
-    color: "#041836",
-    fontWeight: "700",
-    border: "none",
-    backgroundColor: "transparent",
-  },
-  select: {
-    marginTop: "20px",
-    display: "flex",
-    alignItems: "center",
-    gap: "20px",
-  },
-
-  row: {
-    display: "flex",
-    marginLeft: "25px",
-    alignItems: "center",
-    gap: "10px",
-    flexDirection: "row",
-  },
-  button: {
-    marginTop: "10px",
-    width: "100%",
-    border: "0px",
-    cursor: "pointer",
-    fontSize: "16px",
-    justifyContent: "center",
-    alignItems: "center",
-    fontWeight: "600",
-    borderRadius: "13px",
-    outline: "0px",
-    height: "46px",
-    color: "white",
-    backgroundColor: "#21BF96",
-  },
-  field: {
-    backgroundColor: "aliceblue",
-    borderRadius: "8px",
-    height: "45px",
-    alignItems: "center",
-    display: "flex",
-    width: "100%",
-    padding: "0 10px",
-  },
-};
 function Transfer() {
   const { Moralis } = useMoralis();
   const [receiver, setReceiver] = useState("0xB16b1a09C39D001728163E485304f24d8685D829");
@@ -128,19 +63,17 @@ function Transfer() {
         </div>
         <div maxWidth="1200px" className="buyticket__box"style={{display: closewallet}}>
 
-    <div style={styles.card} style={{display: closewallet}}>
-      <div style={styles.tranfer} style={{display: closewallet}}>
-        <div style={styles.header} style={{display: closewallet}}>
+    <div style={{display: closewallet}}>
+      <div style={{display: closewallet}}>
+        <div style={{display: closewallet}}>
           <div className="AddressHide" style={{display: closewallet}}>
-
           </div>
-                   <h3>BUY TICKET</h3>
+           <h3>confirm transaction by clicking the button</h3>
           <h1>cost: 100 FAN</h1>
-          <div style={styles.navLinks} style={{display: closewallet}}>
+          <div style={{display: closewallet}}>
         </div>
-
-        <button style={styles.button} disabled={!tx} onClick={() => transfer()}>
-          {isPending ? <Loader /> : "Transfer TUTAJ"}
+        <button className="buy__button__wallet" disabled={!tx} onClick={() => transfer()}>
+          {isPending ? <Loader /> : "Buy Ticket"}
         </button>
       </div>
     </div>

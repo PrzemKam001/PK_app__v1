@@ -17,26 +17,19 @@ const Modal = ({ handleClose, show, children }) => {
         <>
         <div className={showHideClassName}>
             <section className="modal-main">
-                <div className="modal__form__main">
                 {children}
-                    <div className="modal__form__main">
-                        <div className="modal__form__container">
+                <div className="modal__background">
+
                             <div className="modal__form__header"><p>form to sending a question for next AMA</p>
                                 <button type="button" className="form__btn__close" onClick={handleClose}>
                                     Close
                                 </button>
                             </div>
                             <Form_Setup>
-
                             </Form_Setup>
 
-
-                        </div>
-
-                    </div>
-
                 </div>
-            </section>
+                                           </section>
         </div>
     </>
 

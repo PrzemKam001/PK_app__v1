@@ -6,6 +6,7 @@ import Form from "./Form";
 import LotterySection from "./Lottery_section";
 import "./css/basics.css"
 import Welcome from "./Welcome";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const App = () => {
@@ -16,22 +17,21 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
 
+
+
   return ( // Header = WalletSetup + Account + Address + Chains + Data_Token
     <>
         <Welcome />
         <div className="app__background">
-                <Header></Header>
-                <Data_Token />
-                    <div className="container__lottery">
-                        <div className="lottery__parent">
-                            <LotterySection />
-                        </div>
-                    </div>
-                    <div className="section__line"></div>
-                <Form/>
-                    <div>
-                    <p>this is last version</p>
-                    </div>
+                <Header />
+                    <Data_Token />
+            <div className="container__lottery">
+                <div className="lottery__parent">
+                    <LotterySection />
+                </div>
+            </div>
+            <div className="section__line"></div>
+            <Form />
         </div>
     </>
   );

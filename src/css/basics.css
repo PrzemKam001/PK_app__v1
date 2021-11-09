@@ -2,24 +2,15 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.welcome__page__container {
-    width: 100%;
-    height: 100%;
-    max-width: 1055px;
-    margin: 10px;
-    background: #777777;
-    border-radius: 20px;
-    position: absolute;
-
-}
-
-
 .app__background {
-    max-width: 1050px;
-    margin: 20px;
-    padding: 20px;
+    min-width: 520px;
+    padding:5%;
+
     height: auto;
     border-radius: 10px;
+    background: rgb(255,242,252);
+    background: linear-gradient(180deg, rgba(255,242,252,1) 0%, rgba(255,248,253,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .section__line {
@@ -29,13 +20,14 @@ body {
     min-width: 480px;
     max-width: 999px;
     height: 2px;
-    background-image: linear-gradient(to bottom right, #8b72be, #8b72be);
+    background-color: #eeeeee;
 }
 
 .small__text__basic {
-    color: #8b72be;
+    color: #0ee8c4;
+    margin-top: 5px;
     font-size: 8px;
-    text-align: center;
+    text-align: right;
     margin-bottom: 5px;
 }
 
@@ -57,16 +49,109 @@ h1 {
     color: #1a151f;
 }
 
-button {
-    color: #FFF;
-    font-size: 28px;
-    padding: .5em 2.5em;
-    background: #8E2DE2;
-    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
-    background: linear-gradient(to right, #4A00E0, #8E2DE2);
-    z-index: 1;
-    border: none;
-    border-radius: 36px;
-    cursor: pointer;
+
+
+                                                   .button_cls {
+                                                       align-items: center;
+                                                       appearance: none;
+                                                       background-clip: padding-box;
+                                                       background-color: initial;
+                                                       background-image: none;
+                                                       border-style: none;
+                                                       box-sizing: border-box;
+                                                       color: #fff;
+                                                       cursor: pointer;
+                                                       display: inline-block;
+                                                       flex-direction: row;
+                                                       flex-shrink: 0;
+                                                       font-family: LATO,sans-serif;
+                                                       font-size: 15px;
+                                                       font-weight: 100;
+                                                       justify-content: center;
+                                                       line-height: 24px;
+                                                       margin: 0;
+                                                       min-height: 64px;
+                                                       outline: none;
+                                                       overflow: visible;
+                                                       padding: 19px 26px;
+                                                       pointer-events: auto;
+                                                       position: relative;
+                                                       text-align: center;
+                                                       text-decoration: none;
+                                                       text-transform: none;
+                                                       user-select: none;
+                                                       -webkit-user-select: none;
+                                                       touch-action: manipulation;
+                                                       vertical-align: middle;
+                                                       width: auto;
+                                                       word-break: keep-all;
+                                                       z-index: 0;
+                                                   }
+
+@media (min-width: 768px) {
+    .button_cls {
+        padding: 19px 32px;
+    }
 }
+
+.button_cls:before,
+.button_cls:after {
+    border-radius: 80px;
+}
+
+.button_cls:before {
+    background-color: rgba(249, 58, 19, .32);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+}
+
+.button_cls:after {
+    background-color: initial;
+
+    background-image: linear-gradient(90deg, rgba(153,15,168,1) 0%, rgba(246,100,191,1) 100%);
+
+    bottom: 4px;
+    content: "";
+    display: block;
+    left: 4px;
+    overflow: hidden;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    transition: all 100ms ease-out;
+    z-index: -1;
+}
+
+.button_cls:hover:not(:disabled):after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition-timing-function: ease-in;
+}
+
+.button_cls:active:not(:disabled) {
+    color: #ccc;
+}
+
+.button_cls:active:not(:disabled):after {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+}
+
+.button_cls:disabled {
+    cursor: default;
+    opacity: .24;
+}
+
 
