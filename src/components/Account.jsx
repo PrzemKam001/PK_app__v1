@@ -6,7 +6,7 @@ import "../css/address.css"
 
 
 const Web3 = require("web3");
-const providerIsNew = "https://floral-billowing-glade.bsc.quiknode.pro/29ea12cb502ef5492fc8c5800415e29b801c933b/"
+const providerIsNew = "https://fragrant-snowy-dust.bsc.quiknode.pro/7734e3aae2d98d757423c41d05ead6d4fb4eab4c/"
 // const providerIsNew = "http://localhost:7545"
 const Web3Client = new Web3(new Web3.providers.HttpProvider(providerIsNew));            //provider by QuickNode
 

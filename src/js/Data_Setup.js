@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import {ethers} from 'ethers'
+import React, {useState, useEffect} from 'react';
+import {ethers} from 'ethers';
+import { db } from "./firebase";
 
 
 const Web3 = require("web3");
-const providerIsNew = "https://floral-billowing-glade.bsc.quiknode.pro/29ea12cb502ef5492fc8c5800415e29b801c933b/"
+const providerIsNew = "https://fragrant-snowy-dust.bsc.quiknode.pro/7734e3aae2d98d757423c41d05ead6d4fb4eab4c/"
 const Web3Client = new Web3(new Web3.providers.HttpProvider(providerIsNew));                //provider by QuickNode
 
 
@@ -25,6 +26,9 @@ const DataSetup = () => {
     const [burnBalance, setBurnBalance] = useState("0,00");
     const [circBalance, setCircBalance] = useState("0,00");
     const [buybackBalance, setBuybackBalance] = useState("0,00");
+    const [counter, setCounter] = useState([]);
+    const [finalcount, setFinalcount] = useState (null);
+
 
 
 
@@ -134,6 +138,35 @@ const DataSetup = () => {
     getBalanceOfBB()
 
 
+    //
+    useEffect(() => {
+        db.collection("lotterycount")
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    setCounter((state) => [
+                        ...state,
+                        {
+                            ...doc.data(),
+                            id: doc.id,
+                        },
+                    ]);
+                });
+            });
+    }, []);
+
+
+        const apiVariableArray = [];
+
+        counter.map((el, i) => {
+            return apiVariableArray.push(el.lotterycount);
+        })
+
+        const x = apiVariableArray;
+        const [winvariable] = x;
+
+
+
 
     return (
         <>
@@ -153,10 +186,13 @@ const DataSetup = () => {
 
             {errorMessage}
 
+
+
+
         </div>
             <div className="data__display__chart">
                 <div className='balanceDisplay'>
-                    <p>t</p>
+                    <p>Lottery tries : {apiVariableArray.length}</p>
                 </div>
             </div>
             </div>

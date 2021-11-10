@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import Lottery_Setup from "../../js/Lottery_Setup";
 import "../../css/final_lottery_box.css";
+import {db} from "../../js/firebase";
 
 function Transfer() {
   const { Moralis } = useMoralis();
@@ -13,6 +14,11 @@ function Transfer() {
   const [isPending, setIsPending] = useState(false);
   const [drawbox, setDrawbox] = useState("none");
   const [closewallet, setClosewallet] = useState("block");
+  const [winbox, setWinbox] = useState("none");
+  const [loader, setLoader] = useState(false);
+
+
+
 
   useEffect(() => {
     if (token && amount && receiver) setTx({ amount, receiver, token });
@@ -37,9 +43,22 @@ function Transfer() {
         setIsPending(false);
 
         if (tx.status === true) {
-          console.log("POSZLO ZNAKOMICIE, TERAZ TUTAJ OTWÓRZ DIV");
           setDrawbox("block");
           setClosewallet("none");
+
+          db.collection("lotterycount")
+              .add({
+                lotterycount: 1,
+              })
+              .then(() => {
+                setWinbox("none");
+                setLoader(false);
+              })
+              .catch((error) => {
+                alert(error.message);
+                setLoader(false);
+              });
+
 
         }
 

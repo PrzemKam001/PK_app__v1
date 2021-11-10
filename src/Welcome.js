@@ -4,6 +4,8 @@ import Account from "./components/Account";
 import "./css/welcome.css";
 import Chains from "./components/Chains/Chains";
 import Address from "./components/Address/Address";
+import pancakeswaplogo from "images/pancakeswap.svg";
+import metamaskl from "./images/metamasklogo.png";
 
 
 const styles = {
@@ -37,21 +39,32 @@ function Welcome() {
         return (
             <>
                 <div className="welcome__background">
+                    <div className="welcome__component">
+                    <div className="welcome__sidebar"></div>
                 <div className="welcome__page__container" style={{display: "block"}}>
-                    <h1 className="h1__welcome">WELCOME !</h1>
-            <div style={styles.account}>
+                    <h1 className="h1__welcome">WELCOME</h1>
+            <div style={styles.account} className="welcome__authentication">
                 <p
                     onClick={() => authenticate({ signingMessage: "Hello World!" })}
                     style={{ padding: "0 10px" }}
                 >
-                    Authenticate
+                  Authenticate Your Wallet
                 </p>
 
                 <Chains bsc />
             </div>
-                    <span>Install MetaMask</span>
-                </div>
+                    <div className="welcome__inside"><span>Install MetaMask</span>
+                        <img src={metamaskl}/>
+                    </div>
 
+
+                    <div className="welcome__inside"><span>Buy FAN</span>
+                        <div className="welcome__image"><img src={pancakeswaplogo}/></div>
+                    </div>
+
+                </div>
+                    <div className="welcome__sidebar"></div>
+                    </div>
                 </div>
                 </>
         );
