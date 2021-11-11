@@ -207,10 +207,10 @@ const DataSetup = () => {
         </div>
             <div className="data__display__content">
                 <div className='statisticsDisplay'>
-                <div className="data__display">
+                <div className="data__display"><i className="fas fa-icicles"></i>
                     <p className='statisticsDisplay__p'>LOTTERY TRIES : {apiVariableArray.length}</p>
                 </div>
-                    <div className="data__display">
+                    <div className="data__display"><i className="fas fa-trophy"></i>
                     <p className='statisticsDisplay__p'>LOTTERY WINNERS : {apiwinnersarray.length}</p>
                 </div>
                 </div>
