@@ -26,7 +26,7 @@ class Form extends Component {
         return (
             <>
                <div className="container__form">
-                   <h2 className="form__title">NEXT AMA WILL BE:</h2>
+                   <h2 className="form__title">Send us any question by our form</h2>
                 <div className="form__container_basic">
 
                 <Modal show={this.state.show} handleClose={this.hideModal}>

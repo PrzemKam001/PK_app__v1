@@ -15,8 +15,22 @@
     padding: 20px;
     margin-right: 20px;
     margin-left: 20px;
+
 }
 
+.statisticsDisplay {
+
+    margin-left: 10%;
+
+    max-width: 80%;
+
+}
+
+.statisticsDisplay__p {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    padding: 0 5%;
+}
 
 .data__display__content {
     background-color: #f8dbff;
@@ -28,6 +42,7 @@
     color: #ce03fc;
     margin-right: 5%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 160px;
 
 
 }

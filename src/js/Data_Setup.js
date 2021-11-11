@@ -201,28 +201,20 @@ const DataSetup = () => {
                 <div className="data__display"><i className="fas fa-cash-register"></i><p className="data__info__txt">BUYBACK SALDO: <span>{buybackBalance}</span> FAN</p></div>
 
             </div>
-
             <p>    </p>
             <p>{""}</p>
-
-
-
             {errorMessage}
-
-
-
-
         </div>
-
             <div className="data__display__content">
-                <div className='balanceDisplay'>
+                <div className='statisticsDisplay'>
                 <div className="data__display">
-                    <p>LOTTERY TRIES : {apiVariableArray.length}</p>
-                    <p>LOTTERY WINNERS : {apiwinnersarray.length}</p>
+                    <p className='statisticsDisplay__p'>LOTTERY TRIES : {apiVariableArray.length}</p>
+                </div>
+                    <div className="data__display">
+                    <p className='statisticsDisplay__p'>LOTTERY WINNERS : {apiwinnersarray.length}</p>
                 </div>
                 </div>
             </div>
-
             </div>
             </>
     );
