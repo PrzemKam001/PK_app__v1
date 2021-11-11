@@ -28,6 +28,7 @@ const DataSetup = () => {
     const [buybackBalance, setBuybackBalance] = useState("0,00");
     const [counter, setCounter] = useState([]);
     const [finalcount, setFinalcount] = useState (null);
+    const [winnercount, setWinnercount] = useState([]);
 
 
 
@@ -138,7 +139,7 @@ const DataSetup = () => {
     getBalanceOfBB()
 
 
-    //
+    //   Liczba losujących
     useEffect(() => {
         db.collection("lotterycount")
             .get()
@@ -162,9 +163,31 @@ const DataSetup = () => {
             return apiVariableArray.push(el.lotterycount);
         })
 
-        const x = apiVariableArray;
-        const [winvariable] = x;
+    // liczba wygranych
 
+
+    useEffect(() => {
+        db.collection("lottery_winner")
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    setWinnercount((state) => [
+                        ...state,
+                        {
+                            ...doc.data(),
+                            id: doc.id,
+                        },
+                    ]);
+                });
+            });
+    }, []);
+
+
+    const apiwinnersarray = [];
+
+    winnercount.map((el, i) => {
+        return apiwinnersarray.push(el.answeraddress);
+    })
 
 
 
@@ -190,11 +213,16 @@ const DataSetup = () => {
 
 
         </div>
-            <div className="data__display__chart">
+
+            <div className="data__display__content">
                 <div className='balanceDisplay'>
-                    <p>Lottery tries : {apiVariableArray.length}</p>
+                <div className="data__display">
+                    <p>LOTTERY TRIES : {apiVariableArray.length}</p>
+                    <p>LOTTERY WINNERS : {apiwinnersarray.length}</p>
+                </div>
                 </div>
             </div>
+
             </div>
             </>
     );

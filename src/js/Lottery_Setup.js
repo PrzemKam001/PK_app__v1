@@ -91,7 +91,7 @@ const Lottery_Setup = () => {
 
     useEffect(() => {
         if (yourcodenumber === winvariable) {                                    // OTWIERA MODAL
-            console.log("WYGRANAAAA")
+
             setWinbox("block");
 
             db.collection("lottery_winner")
@@ -109,7 +109,7 @@ const Lottery_Setup = () => {
                 });
 
         } else {
-            console.log(...draw, "Przegrana :(");
+
             setLotterybox("none");
             // HERE SHOULD CLOSE THE Purple DIV (.final_lottery_box) WITH start button etc. after 2-3s
 
@@ -138,10 +138,10 @@ const Lottery_Setup = () => {
         return address
     }
 
-console.log(Address());
 
 
-    console.log(yourcodenumber, typeof(yourcodenumber), winvariable , typeof(winvariable), newyourcode, typeof(newyourcode));
+
+
 
 //style={{display: closewallet}}
         return (
