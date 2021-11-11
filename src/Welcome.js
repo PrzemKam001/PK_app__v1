@@ -45,7 +45,7 @@ function Welcome() {
                     <h1 className="h1__welcome">WELCOME</h1>
             <div style={styles.account} className="welcome__authentication">
                 <p
-                    onClick={() => authenticate({ signingMessage: "Hello World!" })}
+                    onClick={() => authenticate({ signingMessage: "Hello World! Fan lottery App" })}
                     style={{ padding: "0 10px" }}
                 >
                   Authenticate Your Wallet
@@ -53,13 +53,13 @@ function Welcome() {
 
                 <Chains bsc />
             </div>
-                    <div className="welcome__inside"><span>Install MetaMask</span>
-                        <img src={metamaskl}/>
+                    <div className="welcome__items__container">
+                    <div className="welcome__inside__m"><a href={"https://metamask.io/"}><span>Install MetaMask</span>
+                        <img src={metamaskl}/></a>
                     </div>
-
-
-                    <div className="welcome__inside"><span>Buy FAN</span>
-                        <div className="welcome__image"><img src={pancakeswaplogo}/></div>
+                    <div className="welcome__inside"><a href={"https://pancakeswap.finance/swap"}><span>Buy FAN</span>
+                        <div className="welcome__image"><img src={pancakeswaplogo}/></div></a>
+                    </div>
                     </div>
 
                 </div>

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {ethers} from 'ethers';
 import { db } from "./firebase";
+import ProgressBar from "../components/ProgressBar/Progress";
 
 
 const Web3 = require("web3");
@@ -213,6 +214,8 @@ const DataSetup = () => {
                     <div className="data__display"><i className="fas fa-trophy"></i>
                     <p className='statisticsDisplay__p'>LOTTERY WINNERS : {apiwinnersarray.length}</p>
                 </div>
+                    <div className="data__display"><ProgressBar />
+                    </div>
                 </div>
             </div>
             </div>

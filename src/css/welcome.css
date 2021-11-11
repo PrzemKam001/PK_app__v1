@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 55%;
     height: 50%;
     top:50%;
     left:50%;
@@ -34,13 +34,10 @@
     height: auto;
 
 
-
-
-
 }
 
 .welcome__inside {
-    margin-top: 10%;
+    margin-left: 20%;
    text-align: center;
     text-decoration: none;
     display: flex;
@@ -53,9 +50,13 @@ a {
     text-decoration: none;
 }
 
-.welcome__image {
-    width: 30%;
+.welcome__items__container {
+    display: flex;
+    margin-top: 10%;
+}
 
+.welcome__inside__m {
+    margin-left: 15%;
 }
 
 
@@ -80,5 +81,5 @@ a {
     }
 
 .welcome__authentication {
-    margin-left: 5%;
+    margin-left: 20%;
 }
