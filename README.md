@@ -57,3 +57,11 @@ The application is written using React JS and also uses the free MetaMask widget
 Web3 and the free Moralis package compiling contract functions were used to connect to the contract. The application connects to the blockchain on the BSC network.
 In addition, the Google Firebase database was used for data storage.
 
+<h3>
+MORALIS / WEB3 COMMANDS
+</h3>
+<ul>
+<li>signTransaction - authenticate the wallet to run properly MetaMask</li>
+<li>sendTransaction - reacting on contract command "transfer" to sending assets</li>
+<li>getBalanceOf - reacting on contract and sending balance of the tokens from direct address</li>
+</ul>
