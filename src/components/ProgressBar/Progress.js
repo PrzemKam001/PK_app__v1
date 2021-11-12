@@ -9,7 +9,7 @@ const ProgressBar = () => {
 
     const [onewidth, setOnewidth] = useState();
     const [counter, setCounter] = useState([]);
-    const [winnercount, setWinnercount] = useState([]);
+    const [winnercount, setWinnercount] = useState([0]);
 
     const styles = {
             width: onewidth,
@@ -81,7 +81,6 @@ const percent =  (apiVariableArray.length / apiwinnersarray.length)
         const houndredpercent ={
             width: "100%"
         }
-
 
 
         return (

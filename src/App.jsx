@@ -22,6 +22,7 @@ const App = () => {
   return ( // Header = WalletSetup + Account + Address + Chains + Data_Token
     <>
         <Welcome />
+        <div className="app_main">
         <div className="app__background">
                 <Header />
                     <Data_Token />
@@ -32,6 +33,7 @@ const App = () => {
             </div>
             <div className="section__line"></div>
             <Form />
+        </div>
         </div>
     </>
   );

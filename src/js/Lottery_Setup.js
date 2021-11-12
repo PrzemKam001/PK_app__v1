@@ -52,7 +52,7 @@ const Lottery_Setup = () => {
             const startbutton = document.querySelector(".btn__lottery__start");
             startbutton.setAttribute("disabled", "disabled");
 
-            const nums = Array.from({length: winvariable.toString().length}, () => random(1, 9)); // losuje tyle liczb ile kod ma znaków zmiana zmiennej na string
+            const nums = Array.from({length: winvariable.toString().length}, () => random(1, 1)); // losuje tyle liczb ile kod ma znaków zmiana zmiennej na string
             yourCodeArray.push(nums);
             let k = setDraw(nums);
 
@@ -101,7 +101,7 @@ const Lottery_Setup = () => {
                 .then(() => {
                     setWinbox("none");
                     setLoader(false);
-                    alert("Your message has been submitted👍");
+                    alert("Your wallet address has been submitted👍");
                 })
                 .catch((error) => {
                     alert(error.message);

@@ -191,7 +191,6 @@ const DataSetup = () => {
     })
 
 
-
     return (
         <>
             <div className="data__display__container">
